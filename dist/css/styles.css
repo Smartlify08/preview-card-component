@@ -32,6 +32,27 @@ body {
   display: flex;
   flex-direction: column;
 
+  .car:first-of-type {
+    background-color: var(--orange);
+    & button {
+      color: var(--orange);
+    }
+  }
+
+  .car + div {
+    background-color: var(--dark-cyan);
+    /* & button {
+      color: var(--dark-cyan);
+    } */
+  }
+
+  .car + div + div {
+    background-color: var(--darker-cyan);
+    & button {
+      color: var(--darker-cyan);
+    }
+  }
+
   .car {
     padding: 55px;
     display: flex;
@@ -56,33 +77,23 @@ body {
       cursor: pointer;
       font-family: var(--font-2);
       font-size: 15px;
+      transition-property: all;
+      color: var(--dark-cyan);
+    }
+
+    & button:hover {
+      transition-duration: 1s;
+      transition-timing-function: ease-in-out;
+      transition-delay: 0;
+      background: none;
+      border: 2px solid #fff;
+      color: #fff;
     }
 
     & p {
       color: var(--white-paragraph);
       font-size: 15px;
       font-weight: 400;
-    }
-  }
-
-  .car:first-of-type {
-    background-color: var(--orange);
-    & button {
-      color: var(--orange);
-    }
-  }
-
-  .car + div {
-    background-color: var(--dark-cyan);
-    & button {
-      color: var(--dark-cyan);
-    }
-  }
-
-  .car + div + div {
-    background-color: var(--darker-cyan);
-    & button {
-      color: var(--darker-cyan);
     }
   }
 }
