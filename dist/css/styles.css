@@ -1,0 +1,135 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --orange: hsl(31, 77%, 52%);
+  --dark-cyan: hsl(184, 100%, 27%);
+  --darker-cyan: hsl(179, 100%, 13%);
+
+  --white-paragraph: hsla(0, 0%, 100%, 0.75);
+  --light-gray: hsl(0, 0%, 95%);
+
+  --font-1: "Big Shoulders Display", sans-serif;
+  --font-2: "Lexend Deca", sans-serif;
+}
+
+body {
+  background-color: #f4f4f4;
+  font-size: 15px;
+  font-family: var(--font-2);
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.cars {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+
+  .car {
+    padding: 55px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.3rem;
+
+    & header {
+      color: #fff;
+      font-family: var(--font-1);
+      text-transform: uppercase;
+      font-size: 18px;
+    }
+
+    & button {
+      background-color: #fff;
+      outline: none;
+      border: none;
+      padding: 15px;
+      background-color: #f4f4f4;
+      width: 130px;
+      border-radius: 40px;
+      cursor: pointer;
+      font-family: var(--font-2);
+      font-size: 15px;
+    }
+
+    & p {
+      color: var(--white-paragraph);
+      font-size: 15px;
+      font-weight: 400;
+    }
+  }
+
+  .car:first-of-type {
+    background-color: var(--orange);
+    & button {
+      color: var(--orange);
+    }
+  }
+
+  .car + div {
+    background-color: var(--dark-cyan);
+    & button {
+      color: var(--dark-cyan);
+    }
+  }
+
+  .car + div + div {
+    background-color: var(--darker-cyan);
+    & button {
+      color: var(--darker-cyan);
+    }
+  }
+}
+
+.attribution {
+  text-align: center;
+}
+
+.attribution > a {
+  color: var(--dark-cyan);
+}
+
+/* Normally written as @media(max-width:768px) */
+
+@media (width > 767px) {
+  body {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  body > div {
+    width: 100%;
+  }
+  .cars {
+    flex-direction: row;
+
+    .car {
+      & p {
+        margin-bottom: 3.5rem;
+      }
+    }
+  }
+}
+
+@media (width > 1200px) {
+  body {
+    padding: calc(10%);
+    overscroll-behavior-block: contain;
+    overflow-wrap: break-word;
+  }
+}
+
+@media (width > 1300px) {
+  body {
+    padding: 20%;
+  }
+}
